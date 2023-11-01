@@ -28,7 +28,7 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Apply input current injection to the LIF neuron using switches.
+      Apply an input current injection to the LIF neuron using switches.
 
       This gets added to a membrane potential which is decayed over time.
       If the membrane potential exceeds the threshold then trigger a spike. 
