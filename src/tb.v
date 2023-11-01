@@ -2,7 +2,8 @@
 `timescale 1ns/1ps
 
 // testbench is controlled by test.py
-module tb ();
+module tb (
+    );
 
     // this part dumps the trace to a vcd file that can be viewed with GTKWave
     initial begin
@@ -11,7 +12,7 @@ module tb ();
         #1;
     end
 
-    // wire up the inputs and outputs
+    // wire up the inputs and outputs. Use reg for inputs that will be driven by the testbench. 
     reg  clk;
     reg  rst_n;
     reg  ena;
@@ -22,6 +23,9 @@ module tb ();
     wire [7:0] uo_out;
     wire [7:0] uio_out;
     wire [7:0] uio_oe;
+
+    wire [7:0] state = uo_out[7:0];
+    wire       spike = uio_out [7]; 
 
     tt_um_lif tt_um_lif (
         .ui_in      (ui_in),    // Dedicated inputs
