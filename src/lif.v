@@ -37,6 +37,7 @@ module lif (
 );
 
 reg [7:0] state, threshold;
+wire [7:0] next_state;
 
 always @(posedge clk) begin
     if (!rst_n) begin
@@ -45,13 +46,14 @@ always @(posedge clk) begin
     end else begin
         state <= next_state;
     end
-
+end
     //next_state logic
     assign next_state = current + (state>>1);
 
     //spking logic #no reset mechanism
     assign spike = (spike>=threshold);
+    assign next_state = (spike ? 0 : current) + (spike ? 0: (state >> 1)+(state>>2)+(state>>3));
 
-end
+
 endmodule
 
