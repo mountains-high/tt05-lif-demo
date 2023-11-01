@@ -26,7 +26,7 @@
         :math:`R = 0`
       :math:`β` - Membrane potential decay rate
 */
-`default_nettype 
+`default_nettype none
 
 module lif (
     input wire [7:0] current,
