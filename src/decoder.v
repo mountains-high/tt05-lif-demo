@@ -30,6 +30,9 @@
 module lif (
     input wire [7:0] current,
     input wire       clk,
+    input wire       rst_n,
+    ouput wire       spike,
+
     
     
     output reg [6:0] segments
