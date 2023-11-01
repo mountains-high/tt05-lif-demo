@@ -27,8 +27,11 @@
     * :math:`β` - Membrane potential decay rate
 */
 
-module seg7 (
-    input wire [3:0] counter,
+module lif (
+    input wire [7:0] current,
+    input wire       clk,
+    input wire       rst_n,
+    
     output reg [6:0] segments
 );
 
